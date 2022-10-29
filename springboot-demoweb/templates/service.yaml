@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "spring-helm-stg.fullname" . }}
+  name: {{ include "springboot-demoweb.fullname" . }}
   labels:
-    {{- include "spring-helm-stg.labels" . | nindent 4 }}
+    {{- include "springboot-demoweb.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "spring-helm-stg.selectorLabels" . | nindent 4 }}
+    {{- include "springboot-demoweb.selectorLabels" . | nindent 4 }}
